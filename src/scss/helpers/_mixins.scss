@@ -1,0 +1,22 @@
+// Container
+.container {
+	max-width: ($containerWidth +$containerPadding) + px;
+	width: 100%;
+	marging: 0 auto;
+	padding: 0 $containerSidePadding +px;
+	
+	@media (max-width: $breakpoint1458) {
+		max-width: 1200px;
+	}
+	
+	@media (max-width: $breakpoint992) {
+		max-width: 970px;
+	}
+	
+	@media (max-width: $breakpoint768) {
+		max-width: 740px;
+	}
+	
+	@media (max-width: $breakpoint488) {
+		max-width: none;
+	}

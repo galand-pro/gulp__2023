@@ -1,0 +1,206 @@
+.header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    
+}
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #516c81;
+    z-index: 2;
+}
+.header__container {
+    display: flex;
+    min-height: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__logo{
+   position: relative;
+   z-index: 3;
+   overflow: hidden;
+   img{
+    @media (max-width:375px) {
+        width: 250px;
+        
+    }
+   }
+    
+}
+.header__menu {
+    margin: 0 0 0 112px;
+    
+}
+.menu {
+    padding: 5px 0;
+}
+.menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.menu__item:not(:last-child) {
+    margin: 0 60px 0 0;
+}
+.menu__link {
+    font-family: Montserrat;
+    font-weight: 500;
+    line-height: 20px;
+    color: white;
+}
+
+.menu a {
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+    overflow: hidden;
+}
+.menu a:hover:after {
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.menu a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: #fff;
+    opacity: 0;
+    -webkit-transition: opacity .3s,-webkit-transform .3s;
+    transition: opacity .3s,-webkit-transform .3s;
+    -o-transition: opacity .3s,transform .3s;
+    transition: opacity .3s,transform .3s;
+    transition: opacity .3s,transform .3s,-webkit-transform .3s;
+    opacity: 1;
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+}
+.btn__callback {
+    display: flex;
+    width: 186px;
+    height: 45px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    
+}
+a.btn__callback {
+    padding: 14px 30px;
+}
+a.btn__callback:after{
+    opacity: 0;
+}
+a.btn__callback:hover:after{
+    opacity: 0;
+}
+.btn:hover{
+    background-color: #f07f18;
+}
+.header__burger{
+    display: none;
+    position: relative;
+    z-index: 3;
+
+}
+@media (max-width:1200px) {
+    .header__menu{
+        margin: 0 0 0 25px;
+    }
+    .menu__item:not(:last-child) {
+        margin: 0 30px 0 0;
+    }
+}
+@media (max-width:990px) {
+    body.lock{
+        overflow: hidden;
+    }
+    .header__burger{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        
+    }
+    .header__burger span{
+        position: absolute;
+        background-color: #fff;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger::before,
+    .header__burger::after{
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger::before{
+        top: 0;
+    }
+    .header__burger::after{
+        bottom: 0;
+    }
+    .header__burger.active span{
+        display: none;
+    }
+    .header__burger.active::before{
+        transform: rotate(45deg);
+        top: 9px;
+    }
+    .header__burger.active::after{
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+    .header__menu{
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #575181;
+        overflow: auto;
+        margin: 0;
+        padding: 110px 0 0 0;
+        transition: all 0.3s ease 0s;
+        }
+    .header__menu.active{
+        top: 0; 
+        transition: all 0.3s ease 0s;
+        }
+    .menu__list{
+        display: block;
+    }
+    .menu__list li:not(:last-child){
+        margin: 20px 0 20px 0;
+    }
+    .menu a:hover:after {
+        opacity: 0;
+    }
+    .menu a:after {
+        opacity: 0;
+    }
+    .menu__link{
+        font-weight: 400;
+        font-size: 30px;
+        
+    }
+}

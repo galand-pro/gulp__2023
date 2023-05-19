@@ -1,0 +1,9 @@
+// базовые подключения
+@import "base/_reset";
+@import "vars";
+@import "mixins";
+// @import "fonts";
+
+// подключения компонентов страницы
+@import "layouts/header";
+@import "layouts/footer";
