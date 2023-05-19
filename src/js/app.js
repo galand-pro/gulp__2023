@@ -1,8 +1,8 @@
 import * as flsFunctions from "./modules/functions.js";
-import './_vendor';
-import vars from './_vars';
-import './_functions';
-import './_components';
+import './_vendor.js';
+import vars from './_vars.js';
+import './_functions.js';
+import './_components.js';
 
 
 flsFunctions.isWebp();
